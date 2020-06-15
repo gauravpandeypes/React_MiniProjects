@@ -14,8 +14,27 @@ import {ADD_TODO} from '../context/action.types'
 
 const TodoForm = () => {
     const [todoString, setTodoString]=useState("");
+    const {dispatch} = useContext(TodoContext);
+
+    const handleSubmit = e => {
+        e.preventDefault();
+        if(todoString === "") {
+            return alert("Please enter a todo");
+        }
+
+        const todo = {
+            todoString,
+            id: v4()
+        };
+        dispatch({
+            type: ADD_TODO,
+            payload: todo
+        });
+        setTodoString("");
+    }
+
     return(
-        <Form>
+        <Form onSubmit={handleSubmit}>
             <FormGroup>
                 <InputGroup>
                 
