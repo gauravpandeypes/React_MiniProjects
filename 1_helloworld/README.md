@@ -1,4 +1,4 @@
-<h3>Simple app to learn about react components</h3>
+<h1>Simple app to learn about react components</h1>
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
